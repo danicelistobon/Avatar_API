@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Oswald:wght@300;400;700&display=swap');
+
+/*=============================================
+GENERAL STYLES
+=============================================*/
+:root {
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
+  --azul: #15b9d5;
+  --blanco: #ffffff;
+  --gris-bg: #f5f5f5;
+  --gris-claro: #dadada;
+  --gris-medio: #969696;
+  --gris-oscuro: #303030;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  color: var(--gris-oscuro);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  overflow-x: hidden;
+}
+h1, h2, h3 {
+  color: var(--azul);
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+}
+h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+.texto-slim {
+  font-weight: 300;
+}
+.texto-regular {
+  font-weight: 400;
+}
+.texto-bold {
+  font-weight: 700;
+}
+.link {
+  border-bottom: 2px var(--azul) solid;
+  color: var(--gris-oscuro);
+  transition: color 0.6s;
+}
+.link:hover {
+  color: var(--azul);
+  text-decoration: none;
+}
+@media screen and (max-width:768px) {
+  body {
+    font-size: 0.85rem;
+  }
+}
+
+
+/*=============================================
+SLIDER
+=============================================*/
+.slider {
+  background: url(../images/background.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+.slider .overlay {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.slider em {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'Oswald', sans-serif;
+  font-size: 8rem;
+}
+@media screen and (max-width:768px) {
+  .slider em {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width:400px) {
+  .slider em {
+    font-size: 3rem;
+  }
+}
+
+
+/*=============================================
+NAVIGATION
+=============================================*/
+.navigation {
+  background: var(--azul);
+}
+.without {
+  position: relative;
+}
+.without .navigation {
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+header .nav a {
+  color: var(--blanco);
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  transition: color 0.8s;
+}
+header .nav a:hover {
+  color: var(--gris-medio);
+}
+.nav-link.active {
+  border-bottom: 3px var(--blanco) solid;
+}
+@media screen and (max-width:768px) {
+  header .nav a {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width:400px) {
+  header .nav a {
+    font-size: 0.8rem;
+  }
+}
+
+
+/*=============================================
+ABOUT
+=============================================*/
+.cont-about {
+  background: var(--gris-bg);
+  border: 1px var(--gris-claro) solid;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+.cont-about em {
+  font-size: 13px;
+}
+.cont-about ul {
+  margin: 0;
+}
+.cont-about ul li p {
+  margin: 0;
+}
+.cont-about ul li ul li {
+  margin: 6px;
+}
+
+
+/*=============================================
+DOCUMENTATION
+=============================================*/
+li {
+  margin-bottom: 10px;
+}
+.sombra {
+  background: var(--gris-bg);
+  border: 1px var(--gris-claro) solid;
+  border-radius: 5px;
+  padding: 5px;
+}
+table {
+  border: 1px var(--gris-claro) solid;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+th, td {
+  border-bottom: 1px var(--gris-claro) solid;
+  padding: 10px;
+}
+th {
+  background: var(--gris-bg);
+}
+.cont-docs {
+  background: var(--gris-bg);
+  border: 1px var(--gris-claro) solid;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+.nota {
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+/*=============================================
+FOOTER
+=============================================*/
+footer {
+  background: var(--gris-claro);
+  width: 100%;
+}
+.social {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.social .redes {
+  font-size: 18px;
+  margin: 10px;
+}
+.social a {
+  color: var(--gris-oscuro);
+  text-decoration: none;
+  transition: color 0.6s ease;
+}
+.social a:hover {
+  color: var(--azul);
+}
+
+
+/*=============================================
+PAGE NOT FOUND
+=============================================*/
+.page-not-found {
+  background: url(../images/background-404.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+.page-not-found .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.page-not-found em {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'Oswald', sans-serif;
+  font-size: 5rem;
+}
+@media screen and (max-width:768px) {
+  .page-not-found em {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width:400px) {
+  .page-not-found em {
+    font-size: 3rem;
+  }
+}
