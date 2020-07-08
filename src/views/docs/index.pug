@@ -1,0 +1,203 @@
+extends ../layout/index
+block content
+  main
+    .container.mt-5
+      h1.text-center.mb-4 Documentation
+      .row
+        .col-md-1
+        .col-md-10
+          h5 Introduction
+          p.text-justify
+            | This documentation will help you get familiar with how to use the Avatar API and show you how to make different queries.
+          br
+          h5 Response Formats
+          p.text-justify The default response format is JSON.
+          br
+          h5 Authentication
+          p.text-justify
+            | No authentication is required to access this API, all resources are fully open and available.
+          br
+          h5 All Routes
+          p.text-justify
+            | All routes need to be prefixed with: 
+            a.link(href='/api', target='_blank', rel='noopener noreferrer') http://localhost:4000/api
+          h6 There are currently four categories:
+          ul
+            li
+              a.link(href='#bendings') Bendings
+            li
+              a.link(href='#characters') Characters
+            li
+              a.link(href='#nations') Nations
+            li
+              a.link(href='#places') Places
+          br
+          h5#bendings Bendings
+          p
+            | There is a total of 
+            span.sombra 5
+            |  bendings.
+          table
+            tr
+              th Key
+              th Type
+              th Description
+            tr
+              td _id
+              td String
+              td ID of the bending
+            tr
+              td name
+              td String
+              td Name of the bending
+            tr
+              td description
+              td String
+              td Description of the bending
+            tr
+              td image
+              td String (url)
+              td Link to the image of the bending
+          em.nota Get a list of all the bendings:
+          p.cont-docs.text-justify GET /bendings
+          em.nota Get a single bending:
+          p.cont-docs.text-justify GET /bendings/:id
+          br
+          h5#characters Characters
+          p
+            | There is a total of 
+            span.sombra 8
+            |  characters.
+          table
+            tr
+              th Key
+              th Type
+              th Description
+            tr
+              td _id
+              td String
+              td ID of the character
+            tr
+              td name
+              td String
+              td Name of the character
+            tr
+              td ethnicity
+              td Object
+              td Name and link to the nation of the character
+            tr
+              td nationality
+              td Object
+              td Name and link to the birthplace of the character
+            tr
+              td age
+              td String
+              td Age of the character
+            tr
+              td born
+              td String
+              td Year of birth of the character
+            tr
+              td gender
+              td String
+              td Gender of the character (female or male)
+            tr
+              td bending
+              td Array
+              td Name and link to the bending(s) of the character
+            tr
+              td image
+              td String (url)
+              td Link to the image of the character
+          em.nota Get a list of all the characters:
+          p.cont-docs.text-justify GET /characters
+          em.nota Get a single character:
+          p.cont-docs.text-justify GET /characters/:id
+          br
+          h5#nations Nations
+          p
+            | There is a total of 
+            span.sombra 4
+            |  nations.
+          table
+            tr
+              th Key
+              th Type
+              th Description
+            tr
+              td _id
+              td String
+              td ID of the nation
+            tr
+              td name
+              td String
+              td Name of the nation
+            tr
+              td location
+              td String
+              td Location of the nation
+            tr
+              td mapImage
+              td String (url)
+              td Link to the map-image of the nation
+            tr
+              td capital
+              td String
+              td Capital of the nation
+            tr
+              td headState
+              td String
+              td Head of state of the nation
+            tr
+              td currency
+              td String
+              td Currency of the nation
+            tr
+              td description
+              td String
+              td Description of the nation
+            tr
+              td image
+              td String (url)
+              td Link to the image of the nation
+          em.nota Get a list of all the nations:
+          p.cont-docs.text-justify GET /nations
+          em.nota Get a single nation:
+          p.cont-docs.text-justify GET /nations/:id
+          br
+          h5#places Places
+          p
+            | There is a total of 
+            span.sombra 12
+            |  places.
+          table
+            tr
+              th Key
+              th Type
+              th Description
+            tr
+              td _id
+              td String
+              td ID of the place
+            tr
+              td name
+              td String
+              td Name of the place
+            tr
+              td location
+              td String
+              td Location of the place
+            tr
+              td nation
+              td Object
+              td Name and link to the nation of the place
+            tr
+              td image
+              td String (url)
+              td Link to the image of the place
+          em.nota Get a list of all the places:
+          p.cont-docs.text-justify GET /places
+          em.nota Get a single place:
+          p.cont-docs.text-justify GET /places/:id
+          br
+        .col-md-1

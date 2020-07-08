@@ -1,0 +1,67 @@
+extends ../layout/index
+block content
+  main
+    .container.mt-5
+      h1.text-center.mb-4 About
+      .row
+        .col-md-1
+        .col-md-10
+          h5 What is this?
+          .cont-about
+            p.text-justify
+              | This website provides a RESTful API based on the television series
+              b  Avatar: The Last Airbender
+              | . You will have access to information about characters, nations, bendings, places, maps and images.
+            em
+              b Note:
+              |  we specifically cover 'The Legend of Aang', no information or dates from 'The Legend of Korra' are included.
+          h5 What is an API?
+          p.cont-about.text-justify
+            | An Application Programming Interface (API) provides a means by which to access the functionality of a given application, usually with the creation, reading, updating and deleting of data (CRUD). In this case, the application is a database with information related to Avatar: The Last Airbender.
+          h5 Who built this?
+          p.cont-about.text-justify
+            | I am 
+            a.link(href='https://danicelistobon.github.io/', target='_blank', rel='noopener noreferrer') Daniel
+            | , a guy who loves design and front-end development, and a big fan of Avatar: The Last Airbender.
+          h5 What is the technology stack?
+          .cont-about
+            p.text-justify
+              | I used a combination of technologies, all based on JavaScript:
+            ul
+              li.text-justify
+                a.link(href='https://www.mongodb.com/', target='_blank', rel='noopener noreferrer') MongoDB:
+                |  is a NoSQL database system, which stores data in structures or "documents", which are defined with the JSON notation, allowing quick manipulation and transfer of data.
+              li.text-justify
+                a.link(href='https://expressjs.com/', target='_blank', rel='noopener noreferrer') Express.js:
+                |  is a module of Node.js, it allows to handle the requests that are made through the methods of the HTTP protocol, it also offers a simple routing system.
+              li.text-justify
+                a.link(href='https://nodejs.org/en/', target='_blank', rel='noopener noreferrer') Node.js:
+                |  is a JavaScript runtime environment.
+          h5 Where did you get all of this data?
+          .cont-about.text-justify
+            p I got the information of this site from various resources:
+            ul
+              li
+                a.link(href='https://avatar.fandom.com/wiki/Avatar:_The_Last_Airbender', target='_blank', rel='noopener noreferrer') Fandom
+                |  has a lot of information and images of
+                b  Avatar: The Last Airbender
+                | . I used this to develop the database that powers Avatar API.
+              li
+                p Other resources:
+                ul
+                  li
+                    a.link(href='https://www.pngocean.com/gratis-png-clipart-typze', target='_blank', rel='noopener noreferrer') Favicon
+                  li
+                    a.link(href='https://occ-0-92-1723.1.nflxso.net/dnm/api/v6/TsSRXvDuraoJ7apdkH6tsHhf-ZQ/AAAABVdtfGxIeSHMb2yYx1h2sTuIBNMheWJFTocxMtHB3umzkeFfxdDnaK32KxytxeYkOjad3zYhoFYkYzQ1ygkNwlh744kTYVvkeqOF.png?r=2ca', target='_blank', rel='noopener noreferrer') Logo
+                  li
+                    a.link(href='https://wallpapercave.com/w/wp5249440', target='_blank', rel='noopener noreferrer') Background
+                  li
+                    a.link(href='https://wallpapercave.com/w/wp4868080', target='_blank', rel='noopener noreferrer') Background 404
+                  li
+                    a.link(href='https://66.media.tumblr.com/tumblr_macxenoiWY1rfjowdo1_500.gif', target='_blank', rel='noopener noreferrer') Aang gif
+          h5 Copyright
+          p.cont-about.text-justify
+            b Avatar: The Last Airbender
+            |  is an American animated television series that aired for three seasons on Nickelodeon and the Nicktoons Network. The series was created and produced by Michael Dante DiMartino and Bryan Konietzko, who served as executive producers along with Aaron Ehasz. The data and images are used without claim of ownership and belong to their respective owners.
+          br
+        .col-md-1
