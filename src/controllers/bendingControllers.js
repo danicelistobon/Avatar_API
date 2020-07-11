@@ -14,8 +14,8 @@ exports.newBending = async (req, res, next) => {
 
 exports.getBendings = async (req, res, next) => {
   try {
-    const Bendings = await Bending.find({});
-    res.json(Bendings);
+    const bendings = await Bending.find({});
+    res.json(bendings);
   } catch (error) {
     console.log(error);
     next();
