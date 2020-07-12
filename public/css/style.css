@@ -202,6 +202,9 @@ footer {
   background: var(--gris-claro);
   width: 100%;
 }
+footer.no-footer {
+  display: none;
+}
 .social {
   display: flex;
   flex-flow: row wrap;
