@@ -1,5 +1,7 @@
-// Environment Variables
-require('dotenv').config();
+if (process.env.NODE_ENV === 'development') {
+  // Environment Variables
+  require('dotenv').config();
+}
 
 const app = require('./app');
 require('./database');
