@@ -1,0 +1,35 @@
+extends ../layout/index
+block content
+  .container.mt-5.tam-max
+    .row
+      form
+        h1.h2.mb-4
+          | Create a new character 
+          a.btn.btn-sm.btn-outline-info(href='/user', role='button') Back
+        .form-group
+          label.text-muted(for='inputName') Name of the character:
+          input#inputName.form-control(type='text', required='')
+        .form-group
+          label.text-muted(for='inputEthnicity') Name and link to the nation of the character:
+          textarea#inputEthnicity.form-control(rows='2')
+        .form-group
+          label.text-muted(for='inputNationality') Name and link to the birthplace of the character:
+          textarea#inputNationality.form-control(rows='2')
+        .form-group
+          label.text-muted(for='inputAge') Age of the character:
+          input#inputAge.form-control(type='text')
+        .form-group
+          label.text-muted(for='inputBorn') Year of birth of the character:
+          input#inputBorn.form-control(type='text')
+        .form-group
+          label.text-muted(for='inputGender') Gender of the character:
+          input#inputGender.form-control(type='text', required='')
+        .form-group
+          label.text-muted(for='inputBending') Name and link to the bending(s) of the character:
+          textarea#inputBending.form-control(rows='3')
+        .form-group
+          label.text-muted(for='inputImage') Link to the image of the character:
+          input#inputImage.form-control(type='text', required='')
+
+        button.mt-4.btn.btn-outline-info.btn-block(type='submit') Create
+        p.mt-5.mb-3.text-muted © Daniel Celis Tobon - 2020
