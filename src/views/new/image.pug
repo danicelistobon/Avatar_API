@@ -1,0 +1,11 @@
+extends ../layout/index
+block content
+  .container.mt-5.tam-max
+    .row
+      form
+        h1.h2.mb-4 Upload image
+        .form-group
+          label(for='newImage') Search for a new image
+          input#newImage.form-control-file(type='file')
+        button.mt-4.btn.btn-lg.btn-outline-info.btn-block(type='submit') Upload
+        p.mt-5.mb-3.text-muted © Daniel Celis Tobon - 2020
