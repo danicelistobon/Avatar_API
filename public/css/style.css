@@ -49,6 +49,9 @@ h4, h5, h6 {
   color: var(--azul);
   text-decoration: none;
 }
+form {
+  width: 450px;
+}
 .tam-max {
   max-width: 500px;
   padding: 0 50px;
@@ -56,9 +59,23 @@ h4, h5, h6 {
   display: flex;
   justify-content: center;
 }
+.tam-max label {
+  display: flex;
+  justify-content: flex-start;
+}
 @media screen and (max-width:768px) {
   body {
     font-size: 0.85rem;
+  }
+}
+@media screen and (max-width:600px) {
+  form {
+    width: 350px;
+  }
+}
+@media screen and (max-width:400px) {
+  form {
+    width: 250px;
   }
 }
 
