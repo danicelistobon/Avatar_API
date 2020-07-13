@@ -1,0 +1,14 @@
+extends ../layout/index
+block content
+  .container.mt-5.tam-max
+    .row
+      form
+        h1.h2.mb-4 Sign in to Avatar API
+        .form-group
+          label.sr-only(for='inputEmail') Email address
+          input#inputEmail.form-control(type='email', placeholder='Email address', required='', autofocus='')
+        .form-group
+          label.sr-only(for='inputPassword') Password
+          input#inputPassword.form-control(type='password', placeholder='Password', required='')
+        button.mt-4.btn.btn-lg.btn-outline-info.btn-block(type='submit') Sign in
+        p.mt-5.mb-3.text-muted © Daniel Celis Tobon - 2020
