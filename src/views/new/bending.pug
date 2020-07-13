@@ -1,0 +1,20 @@
+extends ../layout/index
+block content
+  .container.mt-5.tam-max
+    .row
+      form
+        h1.h2.mb-4
+          | Create a new bending 
+          a.btn.btn-sm.btn-outline-info(href='/user', role='button') Back
+        .form-group
+          label.text-muted(for='inputName') Name of the bending:
+          input#inputName.form-control(type='text', required='')
+        .form-group
+          label.text-muted(for='inputDescription') Description of the bending:
+          textarea#inputDescription.form-control(rows='4')
+        .form-group
+          label.text-muted(for='inputImage') Link to the image of the bending:
+          input#inputImage.form-control(type='text', required='')
+
+        button.mt-4.btn.btn-outline-info.btn-block(type='submit') Create
+        p.mt-5.mb-3.text-muted © Daniel Celis Tobon - 2020
