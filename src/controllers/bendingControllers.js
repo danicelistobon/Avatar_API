@@ -53,3 +53,7 @@ exports.deleteBending = async (req, res, next) => {
     next();
   }
 };
+
+exports.formNewBending = (req, res) => {
+  res.render('new/bending', { pagina: 'New bending | Avatar API', clase: 'text-center', clase2: 'no-footer' });
+};
