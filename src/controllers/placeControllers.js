@@ -4,7 +4,7 @@ exports.newPlace = async (req, res, next) => {
   const place = new Place(req.body);
   try {
     await place.save();
-    res.json({ mensaje: 'Place created' });
+    res.json({ message: 'Place created' });
   } catch (error) {
     console.log(error);
     next();
@@ -13,7 +13,7 @@ exports.newPlace = async (req, res, next) => {
 
 exports.getPlaces = async (req, res, next) => {
   try {
-    const places = await Place.find({});
+    const places = await Place.find({}, { _id: 0, __v: 0 });
     res.json(places);
   } catch (error) {
     console.log(error);
@@ -23,7 +23,7 @@ exports.getPlaces = async (req, res, next) => {
 
 exports.getPlace = async (req, res, next) => {
   try {
-    const place = await Place.findById(req.params.id);
+    const place = await Place.findOne({ id: req.params.id }, { _id: 0, __v: 0 });
     res.json(place);
   } catch (error) {
     console.log(error);
@@ -46,7 +46,7 @@ exports.putPlace = async (req, res, next) => {
 exports.deletePlace = async (req, res, next) => {
   try {
     await Place.findOneAndDelete({ _id: req.params.id });
-    res.json({ mensaje: 'Place deleted' });
+    res.json({ message: 'Place deleted' });
   } catch (error) {
     console.log(error);
     next();

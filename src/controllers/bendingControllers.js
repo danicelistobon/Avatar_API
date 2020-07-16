@@ -5,7 +5,7 @@ exports.newBending = async (req, res, next) => {
   const bending = new Bending(req.body);
   try {
     await bending.save();
-    res.json({ mensaje: 'Bending created' });
+    res.json({ message: 'Bending created' });
   } catch (error) {
     console.log(error);
     next();
@@ -14,7 +14,7 @@ exports.newBending = async (req, res, next) => {
 
 exports.getBendings = async (req, res, next) => {
   try {
-    const bendings = await Bending.find({});
+    const bendings = await Bending.find({}, { _id: 0, __v: 0 });
     res.json(bendings);
   } catch (error) {
     console.log(error);
@@ -24,7 +24,7 @@ exports.getBendings = async (req, res, next) => {
 
 exports.getBending = async (req, res, next) => {
   try {
-    const bending = await Bending.findById(req.params.id);
+    const bending = await Bending.findOne({ id: req.params.id }, { _id: 0, __v: 0 });
     res.json(bending);
   } catch (error) {
     console.log(error);
@@ -47,7 +47,7 @@ exports.putBending = async (req, res, next) => {
 exports.deleteBending = async (req, res, next) => {
   try {
     await Bending.findOneAndDelete({ _id: req.params.id });
-    res.json({ mensaje: 'Bending deleted' });
+    res.json({ message: 'Bending deleted' });
   } catch (error) {
     console.log(error);
     next();

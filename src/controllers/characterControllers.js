@@ -4,7 +4,7 @@ exports.newCharacter = async (req, res, next) => {
   const character = new Character(req.body);
   try {
     await character.save();
-    res.json({ mensaje: 'Character created' });
+    res.json({ message: 'Character created' });
   } catch (error) {
     console.log(error);
     next();
@@ -13,7 +13,7 @@ exports.newCharacter = async (req, res, next) => {
 
 exports.getCharacters = async (req, res, next) => {
   try {
-    const characters = await Character.find({});
+    const characters = await Character.find({}, { _id: 0, __v: 0 });
     res.json(characters);
   } catch (error) {
     console.log(error);
@@ -23,7 +23,7 @@ exports.getCharacters = async (req, res, next) => {
 
 exports.getCharacter = async (req, res, next) => {
   try {
-    const character = await Character.findById(req.params.id);
+    const character = await Character.findOne({ id: req.params.id }, { _id: 0, __v: 0 });
     res.json(character);
   } catch (error) {
     console.log(error);
@@ -46,7 +46,7 @@ exports.putCharacter = async (req, res, next) => {
 exports.deleteCharacter = async (req, res, next) => {
   try {
     await Character.findOneAndDelete({ _id: req.params.id });
-    res.json({ mensaje: 'Character deleted' });
+    res.json({ message: 'Character deleted' });
   } catch (error) {
     console.log(error);
     next();
