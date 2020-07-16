@@ -52,3 +52,7 @@ exports.deletePlace = async (req, res, next) => {
     next();
   }
 };
+
+exports.formNewPlace = (req, res) => {
+  res.render('new/place', { pagina: 'New place | Avatar API', clase: 'text-center', clase2: 'no-footer' });
+};
