@@ -2,34 +2,36 @@ extends ../layout/index
 block content
   .container.mt-5.tam-max
     .row
-      form
+      form(action='/api/nations/new-nation', method='POST')
         h1.h2.mb-4
           | Create a new nation 
           a.btn.btn-sm.btn-outline-info(href='/user', role='button') Back
         .form-group
+          label.text-muted(for='inputID') ID of the nation:
+          input#inputID.form-control(type='number', name='id', required='')
+        .form-group
           label.text-muted(for='inputName') Name of the nation:
-          input#inputName.form-control(type='text', required='')
+          input#inputName.form-control(type='text', name='name', required='')
         .form-group
           label.text-muted(for='inputLocation') Location of the nation:
-          input#inputLocation.form-control(type='text', required='')
+          input#inputLocation.form-control(type='text', name='location', required='')
         .form-group
           label.text-muted(for='inputMapImage') Link to the map-image of the nation:
-          input#inputMapImage.form-control(type='text', required='')
+          input#inputMapImage.form-control(type='text', name='mapImage', required='')
         .form-group
           label.text-muted(for='inputCapital') Capital of the nation:
-          input#inputCapital.form-control(type='text', required='')
+          input#inputCapital.form-control(type='text', name='capital', required='')
         .form-group
           label.text-muted(for='inputHeadState') Head of state of the nation:
-          input#inputHeadState.form-control(type='text', required='')
+          input#inputHeadState.form-control(type='text', name='headState', required='')
         .form-group
           label.text-muted(for='inputCurrency') Currency of the nation:
-          input#inputCurrency.form-control(type='text', required='')
+          input#inputCurrency.form-control(type='text', name='currency', required='')
         .form-group
           label.text-muted(for='inputDescription') Description of the nation:
-          textarea#inputDescription.form-control(rows='4')
+          textarea#inputDescription.form-control(name='description', rows='4')
         .form-group
           label.text-muted(for='inputImage') Link to the image of the nation:
-          input#inputImage.form-control(type='text', required='')
-
+          input#inputImage.form-control(type='text', name='image', required='')
         button.mt-4.btn.btn-outline-info.btn-block(type='submit') Create
         p.mt-5.mb-3.text-muted © Daniel Celis Tobon - 2020
