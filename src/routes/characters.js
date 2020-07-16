@@ -7,5 +7,6 @@ router.get('/', characterController.getCharacters);
 router.get('/:id', characterController.getCharacter);
 router.put('/:id', characterController.putCharacter);
 router.delete('/:id', characterController.deleteCharacter);
+router.get('/new', characterController.formNewCharacter);
 
 module.exports = router;

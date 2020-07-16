@@ -52,3 +52,7 @@ exports.deleteCharacter = async (req, res, next) => {
     next();
   }
 };
+
+exports.formNewCharacter = (req, res) => {
+  res.render('new/character', { pagina: 'New character | Avatar API', clase: 'text-center', clase2: 'no-footer' });
+};
