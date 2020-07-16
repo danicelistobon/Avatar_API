@@ -52,3 +52,7 @@ exports.deleteNation = async (req, res, next) => {
     next();
   }
 };
+
+exports.formNewNation = (req, res) => {
+  res.render('new/nation', { pagina: 'New nation | Avatar API', clase: 'text-center', clase2: 'no-footer' });
+};

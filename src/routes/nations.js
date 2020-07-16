@@ -7,5 +7,6 @@ router.get('/', nationController.getNations);
 router.get('/:id', nationController.getNation);
 router.put('/:id', nationController.putNation);
 router.delete('/:id', nationController.deleteNation);
+router.get('/new', nationController.formNewNation);
 
 module.exports = router;
