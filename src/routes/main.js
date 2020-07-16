@@ -1,35 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const mainController = require('../controllers/mainControllers');
 
-router.get('/', (req, res) => {
-  res.render('home', { pagina: 'Avatar API', clase: 'without' });
-});
-
-router.get('/about', (req, res) => {
-  res.render('about', { pagina: 'About | Avatar API' });
-});
-
-router.get('/docs', (req, res) => {
-  res.render('docs', { pagina: 'Documentation | Avatar API' });
-});
-
-router.get('/api', (req, res) => {
-  res.json({
-    bendings: 'http://localhost:4000/api/bendings',
-    characters: 'http://localhost:4000/api/characters',
-    nations: 'http://localhost:4000/api/nations',
-    places: 'http://localhost:4000/api/places'
-  });
-});
-
-router.get('/signin', (req, res) => {
-  res.render('sign-in', { pagina: 'Sign in | Avatar API', clase: 'text-center', clase2: 'no-footer' });
-});
-
-router.get('/user', (req, res) => {
-  res.render('user', { pagina: 'User | Avatar API', clase: 'text-center', clase2: 'no-footer' });
-});
-
-router.use('/new', require('./new'));
+router.get('/', mainController.renderHome);
+router.get('/about', mainController.renderAbout);
+router.get('/docs', mainController.renderDocs);
+router.get('/api', mainController.getApi);
+router.get('/signin', mainController.renderSignin);
+router.get('/user', mainController.renderUser);
+router.use('/new-image', mainController.formNewImage);
 
 module.exports = router;
