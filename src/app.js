@@ -1,10 +1,13 @@
 const express = require('express');
+const session = require('express-session');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan');
 const path = require('path');
+const passport = require('passport');
 
 const app = express();
+require('./config/passport');
 
 // Settings
 app.set('port', process.env.PORT || 4000);
@@ -16,8 +19,18 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(session({
+  secret: 'secret-avatar-api',
+  resave: true,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Global variables
 app.use((req, res, next) => {
   res.locals.ruta = req.path;
+  res.locals.user = req.user || null;
   return next();
 });
 
