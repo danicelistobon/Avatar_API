@@ -1,3 +1,6 @@
+const passport = require('passport');
+const User = require('../models/User');
+
 exports.renderHome = (req, res) => {
   res.render('home', { pagina: 'Avatar API', clase: 'without' });
 };
@@ -19,8 +22,30 @@ exports.getApi = (req, res) => {
   });
 };
 
-exports.renderSignin = (req, res) => {
+/* exports.signUp = async (req, res, next) => {
+  const user = new User(req.body);
+  user.password = await user.encryptPwd(req.body.password);
+  try {
+    await user.save();
+    res.json({ message: 'User created' });
+  } catch (error) {
+    console.log(error);
+    next();
+  }
+}; */
+
+exports.renderSignIn = (req, res) => {
   res.render('sign-in', { pagina: 'Sign in | Avatar API', clase: 'text-center', clase2: 'no-footer' });
+};
+
+exports.signIn = passport.authenticate('local', {
+  successRedirect: '/user',
+  failureRedirect: '/user/sign-in'
+});
+
+exports.signOut = (req, res) => {
+  req.logout();
+  res.redirect('/');
 };
 
 exports.renderUser = (req, res) => {
