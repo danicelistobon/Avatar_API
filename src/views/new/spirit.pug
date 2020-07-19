@@ -1,0 +1,22 @@
+extends ../layout/index
+block content
+  .container.mt-5.tam-max
+    .row
+      form(action='/api/spirits/new-spirit', method='POST')
+        h1.h2.mb-4
+          | Create a new spirit 
+          a.btn.btn-sm.btn-outline-info(href='/user', role='button') Back
+        .form-group
+          label.text-muted(for='inputID') ID of the spirit:
+          input#inputID.form-control(type='number', name='id', required='')
+        .form-group
+          label.text-muted(for='inputName') Name of the spirit:
+          input#inputName.form-control(type='text', name='name', required='')
+        .form-group
+          label.text-muted(for='inputDescription') Description of the spirit:
+          textarea#inputDescription.form-control(name='description', rows='4')
+        .form-group
+          label.text-muted(for='inputImage') Link to the image of the spirit:
+          input#inputImage.form-control(type='text', name='image', required='')
+        button.mt-4.btn.btn-outline-info.btn-block(type='submit') Create
+        p.mt-5.mb-3.text-muted © Daniel Celis Tobon - 2020
