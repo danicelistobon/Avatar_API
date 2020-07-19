@@ -18,7 +18,9 @@ exports.getApi = (req, res) => {
     bendings: 'http://localhost:4000/api/bendings',
     characters: 'http://localhost:4000/api/characters',
     nations: 'http://localhost:4000/api/nations',
-    places: 'http://localhost:4000/api/places'
+    pets: 'http://localhost:4000/api/pets',
+    places: 'http://localhost:4000/api/places',
+    spirits: 'http://localhost:4000/api/spirits'
   });
 };
 

@@ -39,7 +39,9 @@ app.use('/', require('./routes/main'));
 app.use('/api/bendings', require('./routes/bendings'));
 app.use('/api/characters', require('./routes/characters'));
 app.use('/api/nations', require('./routes/nations'));
+app.use('/api/pets', require('./routes/pets'));
 app.use('/api/places', require('./routes/places'));
+app.use('/api/spirits', require('./routes/spirits'));
 
 // Static files
 app.use(express.static(path.join(__dirname, '../public')));
