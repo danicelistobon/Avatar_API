@@ -21,7 +21,7 @@ block content
           p.text-justify
             | All routes need to be prefixed with: 
             a.link(href='/api', target='_blank', rel='noopener noreferrer') http://localhost:4000/api
-          h6 There are currently four categories:
+          h6 There are currently six categories:
           ul
             li
               a.link(href='#bendings') Bendings
@@ -30,12 +30,16 @@ block content
             li
               a.link(href='#nations') Nations
             li
+              a.link(href='#pets') Pets
+            li
               a.link(href='#places') Places
+            li
+              a.link(href='#spirits') Spirits
           br
           h5#bendings Bendings
           p
             | There is a total of 
-            span.sombra 5
+            span.sombra 13
             |  bendings.
           table
             tr
@@ -66,7 +70,7 @@ block content
           h5#characters Characters
           p
             | There is a total of 
-            span.sombra 8
+            span.sombra ...
             |  characters.
           table
             tr
@@ -165,10 +169,45 @@ block content
           em.nota Get a single nation:
           p.cont-docs.text-justify GET /nations/:id
           br
+          h5#pets Pets
+          p
+            | There is a total of 
+            span.sombra 11
+            |  pets.
+          table
+            tr
+              th Key
+              th Type
+              th Description
+            tr
+              td id
+              td Number
+              td ID of the pet
+            tr
+              td name
+              td String
+              td Name of the pet
+            tr
+              td typeAnimal
+              td String
+              td Type of animal of the pet
+            tr
+              td position
+              td Object
+              td Description and link of the owner of the pet
+            tr
+              td image
+              td String (url)
+              td Link to the image of the pet
+          em.nota Get a list of all the pets:
+          p.cont-docs.text-justify GET /pets
+          em.nota Get a single pet:
+          p.cont-docs.text-justify GET /pets/:id
+          br
           h5#places Places
           p
             | There is a total of 
-            span.sombra 12
+            span.sombra ...
             |  places.
           table
             tr
@@ -199,5 +238,36 @@ block content
           p.cont-docs.text-justify GET /places
           em.nota Get a single place:
           p.cont-docs.text-justify GET /places/:id
+          br
+          h5#spirits Spirits
+          p
+            | There is a total of 
+            span.sombra 11
+            |  spirits.
+          table
+            tr
+              th Key
+              th Type
+              th Description
+            tr
+              td id
+              td Number
+              td ID of the spirit
+            tr
+              td name
+              td String
+              td Name of the spirit
+            tr
+              td description
+              td String
+              td Description of the spirit
+            tr
+              td image
+              td String (url)
+              td Link to the image of the spirit
+          em.nota Get a list of all the spirits:
+          p.cont-docs.text-justify GET /spirits
+          em.nota Get a single spirit:
+          p.cont-docs.text-justify GET /spirits/:id
           br
         .col-md-1
