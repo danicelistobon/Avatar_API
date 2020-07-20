@@ -2,6 +2,8 @@ const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const mongoose = require('mongoose');
+const MongoStore = require('connect-mongo')(session);
 const morgan = require('morgan');
 const path = require('path');
 const passport = require('passport');
@@ -22,7 +24,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
   secret: 'secret-avatar-api',
   resave: true,
-  saveUninitialized: true
+  saveUninitialized: true,
+  store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 app.use(passport.initialize());
 app.use(passport.session());
