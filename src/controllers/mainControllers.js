@@ -15,13 +15,13 @@ exports.renderDocs = (req, res) => {
 
 exports.getApi = (req, res) => {
   res.json({
-    bendings: { url: 'https://avatar-app.herokuapp.com/api/bendings', total: 13 },
-    characters: { url: 'https://avatar-app.herokuapp.com/api/characters', total: 51 },
+    bendings: { url: 'https://avatar-app.herokuapp.com/api/bendings', total: 14 },
+    characters: { url: 'https://avatar-app.herokuapp.com/api/characters', total: 200 },
     nations: { url: 'https://avatar-app.herokuapp.com/api/nations', total: 4 },
     pets: { url: 'https://avatar-app.herokuapp.com/api/pets', total: 11 },
-    places: { url: 'https://avatar-app.herokuapp.com/api/places', total: 84 },
+    places: { url: 'https://avatar-app.herokuapp.com/api/places', total: 216 },
     spirits: { url: 'https://avatar-app.herokuapp.com/api/spirits', total: 11 },
-    TOTAL: 174
+    TOTAL: 456
   });
 };
 
